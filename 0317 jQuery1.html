@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0317 jQuery 練習</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .box-a {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #aaa;
+    }
+    .box-b {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: rgb(226, 233, 130);
+    }
+    .product-title {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .content {
+      display: none;
+      background-color: rgb(155, 208, 155);
+    }
+    .full-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+
+      width: 100%;
+      height: 100%;
+      /* (r, g, b, a)，a代表透明值 */
+      background-color: rgba(0, 0, 0, 0.5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 測試jQuery addClass需先添加 */
+    /* .full-screen也同時擁有.close這個class */
+    .full-screen.close {
+      display: none;
+    }
+    .txt {
+      width: 70%;
+      /* RWD效果 */
+      max-width: 500px;
+      background-color: rgb(155, 208, 155);
+      padding: 20px;
+
+      position: relative;
+    }
+    .btn-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+
+      background-color: rgb(224, 86, 86);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+    }
+    .btn-open {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+
+      background-color: rgb(224, 86, 86);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+
+      display: block;
+      margin: 5px;
+    }
+  </style>
+  <body>
+    <a href="#" class="btn-open">open</a>
+
+    <div class="box-a">box-a</div>
+    <div class="box-b">box-b</div>
+
+    <div class="product-title">產品介紹</div>
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, commodi quam
+      odio fuga atque maiores nemo animi magni incidunt eaque aspernatur! Quasi
+      hic placeat blanditiis esse, quia illum minima neque.
+    </div>
+
+    <!-- 蓋板廣告-內文 -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla odit
+      voluptate non unde vel nemo quod nihil at ut officiis. Quia nulla, amet
+      veritatis dolor tempora doloremque reiciendis deleniti necessitatibus?
+    </p>
+    <p>
+      Illum ad provident dolore non quis harum veritatis quasi repudiandae
+      tempora error doloremque, perferendis et voluptas, id, ex dolorem
+      consectetur iure amet delectus aliquam velit expedita atque? Velit, ullam
+      assumenda.
+    </p>
+    <p>
+      Reprehenderit fugit magnam libero minima odit magni iusto quas! Eaque,
+      quod? Voluptatem id eius illo, mollitia unde sint et, recusandae odio
+      distinctio eos, debitis nemo cupiditate blanditiis. Officiis, saepe
+      facilis!
+    </p>
+    <p>
+      Voluptate delectus tempora perferendis omnis blanditiis consectetur
+      distinctio alias ducimus ratione cum ipsum consequatur, deleniti
+      doloremque culpa temporibus expedita repellat modi ab natus. Cupiditate
+      voluptatem voluptates eveniet labore tempora alias.
+    </p>
+    <p>
+      Voluptatem natus molestias repudiandae voluptatum eligendi quia cum fugit
+      autem fuga asperiores cumque sequi, iure assumenda distinctio consequuntur
+      esse magni explicabo dolor perferendis officiis reprehenderit tempore
+      cupiditate. Impedit, iste. Voluptatem!
+    </p>
+    <p>
+      Voluptate pariatur doloribus eum. Recusandae provident quidem sunt
+      reprehenderit explicabo eos fugit voluptates commodi cum minus a,
+      voluptatum minima excepturi, esse aliquid veniam. Repellendus excepturi ut
+      dolorem nobis, vel doloremque.
+    </p>
+    <p>
+      Quidem, neque dolorem. Quaerat, cupiditate aut molestiae incidunt error
+      libero tempora eaque corrupti delectus enim aperiam provident, expedita
+      quas excepturi dolor similique laborum? Aut maiores voluptatibus molestias
+      qui quasi nulla.
+    </p>
+    <p>
+      Iusto quis eius quia ducimus voluptatem ullam repellendus facere tenetur
+      eveniet? Quae quam, praesentium corrupti velit aliquid cupiditate
+      voluptates architecto quaerat laborum vitae animi ducimus reprehenderit
+      non ipsam adipisci maiores.
+    </p>
+    <p>
+      Voluptatibus laboriosam aliquid assumenda vel molestias, debitis magni
+      fuga quam porro illum delectus error maiores nostrum reiciendis inventore
+      dignissimos veniam vitae, molestiae nulla earum iure totam dolor! Amet,
+      consequuntur fuga.
+    </p>
+    <p>
+      Dolorum nobis sunt atque error laboriosam corporis quisquam quasi magnam
+      illo aliquid et veniam sequi assumenda architecto eius voluptatum nisi
+      amet officia, ipsum quaerat tempora quo odio dignissimos distinctio! Cum!
+    </p>
+    <p>
+      Nesciunt odio optio dicta saepe incidunt dolores aperiam, vitae ipsa!
+      Similique recusandae tempora corrupti quae doloremque molestiae voluptatem
+      dolores a aspernatur nostrum corporis saepe alias, totam animi! Explicabo,
+      facilis distinctio?
+    </p>
+    <p>
+      Ea tempora quidem, suscipit sapiente voluptates doloremque tempore.
+      Laboriosam odit possimus atque doloremque eligendi in labore inventore
+      fugiat accusamus amet libero, cum, quis quidem quod iste enim perspiciatis
+      rem repellendus!
+    </p>
+    <p>
+      Placeat qui adipisci doloribus eaque temporibus, hic cum nihil
+      consequuntur obcaecati similique odit dolor exercitationem incidunt
+      tenetur! Quos velit eaque libero et incidunt. Officia, dolore fugiat?
+      Quasi eum reprehenderit itaque.
+    </p>
+    <p>
+      Officia nulla iure similique ullam suscipit, porro quam. Ducimus
+      praesentium est perferendis tempora explicabo culpa vitae aliquam iste
+      deleniti, quo asperiores architecto hic repellendus saepe obcaecati
+      eveniet doloribus pariatur ipsum!
+    </p>
+
+    <!-- 蓋板廣告-跳出廣告 -->
+    <div class="full-screen">
+      <div class="txt">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
+        assumenda nihil, hic fugit quisquam atque molestiae, dolor sint optio
+        dignissimos molestias deserunt ullam delectus animi sit explicabo
+        dolorum eveniet a.
+        <a href="#" class="btn-close">X</a>
+      </div>
+    </div>
+
+    <!-- 導入jQuery函式庫。第一種-直接連到網路，以下為google cdn貼過來的 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+
+    <!-- 導入jQuery函式庫。第二種-將第一種網頁中code存到本地folder，再連結到該檔案 -->
+    <script src="./JS/jquery.min.js"></script>
+    <script>
+      // 文件準備好時
+      // function(){}就像是按電梯按鈕，不了解電梯怎運作，但知道按了按鈕會上下樓
+      $(document).ready(function () {
+        // 寫法 $("CSS選取器")
+        // hide只會藏不會開；toggle自動判斷該藏還是該開
+
+        // demo1
+        $(".box-a").dblclick(function () {
+          $(".box-b").toggle();
+        });
+
+        // demo2
+        $(".product-title").click(function () {
+          $(".content").toggle();
+        });
+
+        // demo3
+        // $(".btn-close").click(function () {
+        //   $(".full-screen").hide();
+        // });
+
+        // demo4-1
+        // addClass("")的close前面不須再加點點
+        // $(".btn-close").click(function () {
+        //   $(".full-screen").addClass("close");
+        // });
+
+        // demo4-2
+        // $(".btn-open").click(function () {
+        //   $(".full-screen").removeClass("close");
+        // });
+
+        // demo5
+        $(".btn-close").click(function () {
+          $(".full-screen").fadeOut("close");
+        });
+
+        $(".btn-open").click(function () {
+          $(".full-screen").fadeIn("close");
+        });
+      });
+    </script>
+  </body>
+</html>

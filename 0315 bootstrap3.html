@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>0315 Bootstrap demo-3</title>
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* .jumbotron {
+        background-image: url("https://picsum.photos/1900/1200/?random=30");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        padding: 10px;
+        color: #fff;
+      } */
+      .path {
+        background-color: #ccc;
+      }
+      .path nav .breadcrumb {
+        padding: 8px;
+      }
+      .row.row-1 {
+        margin: 30px;
+      }
+      .row.row-1 .aa {
+        margin-bottom: 20px;
+      }
+      .main-footer {
+        background-color: #ccc;
+        color: #000;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 從bootstrap官網搜尋navbar把code貼上即可 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <!-- 從modal button貼過來的 -->
+              <!-- <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#hahahi">登入</button> -->
+              <!-- <a href="#hahahi" data-bs-toggle="modal"></a> -->
+              <a class="nav-link" href="#hahahi" data-bs-toggle="modal">登入</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- jumbotron -->
+    <!-- <div class="jumbotron">
+      <h1>Hello, world!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        enim debitis necessitatibus perferendis quas quaerat totam soluta nemo
+        fugit inventore!
+      </p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div> -->
+
+    <!-- carousel，需自行改圖 -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- 自行改圖，但要記得加bootstrap class -->
+          <img
+            src="https://picsum.photos/1200/300/?random=51"
+            class="d-block w-100"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://picsum.photos/1200/300/?random=52"
+            class="d-block w-100"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://picsum.photos/1200/300/?random=53"
+            class="d-block w-100"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- breadcrumb -->
+    <div class="path">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row row-1">
+        <div class="col-12 col-md-3 aa">
+          <!-- list group -->
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-9 bb">
+          <h1>title</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat,
+            possimus voluptatibus. Quam qui corrupti cumque asperiores itaque
+            praesentium, sint adipisci, quas assumenda in nulla tempore dolorem
+            et enim harum commodi.
+          </p>
+          <div class="row">
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=31"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=32"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=33"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=34"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=41"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=42"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=43"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="item">
+                <img
+                  src="https://picsum.photos/300/200/?random=44"
+                  class="img-fluid"
+                />
+                <h3>title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  eveniet quis natus voluptate at repellendus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- pagination -->
+    <div class="page">
+      <nav aria-label="Page navigation example">
+        <!-- 置中，bootstrap將flex融入class -->
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 直接在class裡面置中 -->
+    <div class="container-fluid main-footer text-center">
+      &copy; Copyright by Tina Zhou
+    </div>
+
+    <!-- Button trigger modal -->
+    <!-- toggle決定要控制的模組 -->
+    <!-- target決定要控制的物件 -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#hahahi">登入</button> -->
+    <!-- 以上button測試完即可加到navbar a裡面 -->
+
+    <!-- modal -->
+    <!-- 有button須記得連結id，id="hahahi" -->
+    <div class="modal" tabindex="-1" id="hahahi">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">登入</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 最最最優先貼上 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 視需求添加 popper js, bootstrap js -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>

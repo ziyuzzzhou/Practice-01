@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0317 jQuery 練習-2</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    .controller {
+      display: block;
+
+      width: 300px;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+    .txt {
+      display: none;
+
+      width: 300px;
+      padding: 10px;
+      background-color: #ccc;
+    }
+    .txt.open {
+      display: block;
+    }
+  </style>
+  <body>
+    <a href="#" class="controller controller1">開/關</a>
+    <div class="txt txt1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+      necessitatibus quidem eveniet reprehenderit dolores omnis nisi debitis
+      sapiente inventore non quae autem eum, consequatur at nihil. Ea sit magnam
+      recusandae.
+    </div>
+
+    <a href="#" class="controller controller2">開/關</a>
+    <div class="txt txt2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+      necessitatibus quidem eveniet reprehenderit dolores omnis nisi debitis
+      sapiente inventore non quae autem eum, consequatur at nihil. Ea sit magnam
+      recusandae.
+    </div>
+
+    <script src="./JS/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 上面勿刪
+
+        // 1st作法-toggleClass
+        // $(".controller1").click(function () {
+        //   $(".txt1").toggleClass("open");
+        // });
+
+        // $(".controller2").click(function () {
+        //   $(".txt2").toggleClass("open");
+        // });
+
+        // 2nd作法-slideToggle & fadeToggle
+        $(".controller1").click(function () {
+          $(".txt1").slideToggle();
+        });
+
+        $(".controller2").click(function () {
+          $(".txt2").fadeToggle();
+        });
+
+        // 下面勿刪
+      });
+    </script>
+  </body>
+</html>

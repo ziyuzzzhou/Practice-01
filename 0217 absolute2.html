@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>0217 absolute practice-2</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      .wrap {
+        width: 960px;
+        margin: auto;
+        display: flex;
+      }
+      .item {
+        width: 300px;
+        height: 380px;
+        margin: 10px;
+        border: 1px solid gray;
+        padding: 10px;
+        /* 如果使用fixed or absolute會變成資料獨立一層，所以要選用relative */
+        position: relative;
+      }
+      .item img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-top: 10px;
+      }
+      .item .tab {
+        background-color: rgb(255, 0, 43);
+        color: wheat;
+        padding: 10px;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <div class="tab">Hot!</div>
+        <img
+          src="https://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/093/16/0010931682.jpg&v=63776cbfk&w=348&h=348"
+          alt=""
+          width="150px"
+        />
+        <h2>三浦紫苑新書</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+          iste.
+        </p>
+      </div>
+      <div class="item">
+        <div class="tab">Hot!</div>
+        <img
+          src="https://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/093/16/0010931682.jpg&v=63776cbfk&w=348&h=348"
+          alt=""
+          width="150px"
+        />
+        <h2>三浦紫苑新書</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+          iste.
+        </p>
+      </div>
+      <div class="item">
+        <div class="tab">Hot!</div>
+        <img
+          src="https://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/093/16/0010931682.jpg&v=63776cbfk&w=348&h=348"
+          alt=""
+          width="150px"
+        />
+        <h2>三浦紫苑新書</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
+          iste.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

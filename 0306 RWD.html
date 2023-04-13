@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0306 RWD 練習</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        /* 手機尺寸滿版 */
+        width: 100%;
+        /* 適合大螢幕，最好能夠被3.4.5欄整除 */
+        max-width: 1400px;
+        margin: auto;
+      }
+      .item {
+        background-color: rgb(211, 211, 144);
+        margin: 10px;
+        padding: 10px;
+        /* 寬度縮小但希望高度不變 */
+        height: 100px;
+      }
+      /* 寬度大於等於768px時會套用以下格式 */
+      @media screen and (min-width: 768px) {
+        .wrap {
+          display: flex;
+        }
+        .item {
+          width: 33.333333%;
+          /* 高度隨著內容去變 */
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <h3>title</h3>
+        <p>
+          iatis sit laudantium dolore rerum accusantium, obcaecati veniam.
+          Labore facere nemo numquam?
+        </p>
+      </div>
+      <div class="item">
+        <h3>title</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure earum
+          corrupti optio sed odio ipsa, quasi blanditiis est, perspiciatis sit
+          laudantium dolore rerum accusantium, obcaecati veniam. Labore facere
+          nemo numquam?
+        </p>
+      </div>
+      <div class="item">
+        <h3>title</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure earum
+          corrupti optio sed odio ipsa, quasi blanditiis est, perspiciatis sit
+          laudantium dolore rerum accusantium, obcaecati veniam. Labore facere
+          nemo numquam?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

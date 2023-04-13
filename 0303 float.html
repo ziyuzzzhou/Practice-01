@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0303 float 練習</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .float-img {
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+      .add-margin-bottom {
+        margin-bottom: 20px;
+      }
+      .container {
+        width: 960px;
+        background-color: blanchedalmond;
+        margin: auto;
+        padding: 8px;
+      }
+      .col {
+        float: left;
+        width: 280px;
+        background-color: #ccc;
+        margin: 10px;
+        padding: 10px;
+      }
+      .col img {
+        width: 100%;
+      }
+      .clear-block {
+        /* 使父層可抓到子層高度 */
+        /* clear會閃開所有物件，會跑到float物件後方，不會跟float物件重疊在一起 */
+        clear: both;
+        /* height: 10px;
+        background-color: aqua; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 假圖，大小/背景色/字顏色，都可直接修改 -->
+    <img
+      src="https://fakeimg.pl/250x150/a5e077/555"
+      alt="fakeimg"
+      class="float-img"
+    />
+    <p class="add-margin-bottom">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+      pariatur ut praesentium expedita ad voluptas deleniti fugiat consectetur.
+      Temporibus optio reprehenderit quos aliquam sit, ab architecto ipsa
+      dolores molestias magni. Ex quo, odit aspernatur nam ad nobis voluptate!
+      Modi consequatur recusandae architecto dolorum. Officia recusandae natus
+      minus, est consequuntur nulla nostrum illum aliquam veritatis itaque sequi
+      incidunt vitae beatae aspernatur. Quos quas harum tenetur alias fugit
+      dolor ex optio officiis eos numquam quasi maiores sed aspernatur, quis
+      quidem sit, sapiente, cupiditate doloribus veniam repellendus?
+      Perspiciatis quidem recusandae aliquid ex minus.Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Cupiditate pariatur ut praesentium expedita
+      ad voluptas deleniti fugiat consectetur. Temporibus optio reprehenderit
+      quos aliquam sit, ab architecto ipsa dolores molestias magni. Ex quo, odit
+      aspernatur nam ad nobis voluptate! Modi consequatur recusandae architecto
+      dolorum. Officia recusandae natus minus, est consequuntur nulla nostrum
+      illum aliquam veritatis itaque sequi incidunt vitae beatae aspernatur.
+      Quos quas harum tenetur alias fugit dolor ex optio officiis eos numquam
+      quasi maiores sed aspernatur, quis quidem sit, sapiente, cupiditate
+      doloribus veniam repellendus? Perspiciatis quidem recusandae aliquid ex
+      minus. Temporibus optio reprehenderit quos aliquam sit, ab architecto ipsa
+      dolores molestias magni. Ex quo, odit aspernatur nam ad nobis voluptate!
+      Modi consequatur recusandae architecto dolorum. Officia recusandae natus
+      minus, est consequuntur nulla nostrum illum aliquam veritatis itaque sequi
+      incidunt vitae beatae aspernatur. Quos quas harum tenetur alias fugit
+      dolor ex optio officiis eos numquam quasi maiores sed aspernatur, quis
+      quidem sit, sapiente, cupiditate doloribus veniam repellendus?
+      Perspiciatis quidem recusandae aliquid ex minus.
+    </p>
+    <div class="container">
+      <div class="col">
+        <img
+          src="https://fakeimg.pl/250x150/a5e077/555"
+          alt="fakeimg"
+        />
+        <h3>title</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem
+          reiciendis quis suscipit vel quisquam, velit atque. Repellendus natus
+          culpa at. Quia odio libero similique facilis accusamus accusantium
+          possimus praesentium.
+        </p>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakeimg.pl/250x150/a5e077/555"
+          alt="fakeimg"
+        />
+        <h3>title</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem
+          reiciendis quis suscipit vel quisquam, velit atque. Repellendus natus
+          culpa at. Quia odio libero similique facilis accusamus accusantium
+          possimus praesentium.
+        </p>
+      </div>
+      <div class="col">
+        <img
+          src="https://fakeimg.pl/250x150/a5e077/555"
+          alt="fakeimg"
+        />
+        <h3>title</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis rem
+          reiciendis quis suscipit vel quisquam, velit atque. Repellendus natus
+          culpa at. Quia odio libero similique facilis accusamus accusantium
+          possimus praesentium.
+        </p>
+      </div>
+      <div class="clear-block"></div>
+    </div>
+  </body>
+</html>
